@@ -1,181 +1,57 @@
-<!DOCTYPE html> <!--
-this is the website used to select gradients https://uigradients.com/#Hydrogen. 
-declaration is used to indicate to web 
-
-browsers the version of HTML that the webpage is using.
-
-It is a required preamble at the beginning of an HTML document, which tells the browser which standard of HTML is being used. This declaration helps the browser to interpret and display the webpage's content correctly.
-
-In simple terms, it's like telling the browser "Hey, this document is written in HTML and it follows the HTML5 standard".-->
-<html lang="en"> <!--this tells that it will be in english -->
-  <head> 
-      <meta charset="UTF-8"> <!--<meta>: This element is used to provide metadata about the document, such as the character encoding, keywords, and description. -->
-    <Title> Colors Change While Scrolling</title>
-    
-    
-    <style> 
-    
-      body{
-        color: #000;
-        background-color: #f4f4f4;
-        transition: background-color is ease;
-     
-      
-      }
-      
-      .panel{
-        min-height: 100vh;
-        display: flex;
-        justify-content: space-around;
-        align-items: center; 
-        font-family: sans-serif; 
-      }
-      .color-violet{  
-        background: #3A1C71;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-      }
-      
-        .color-indigo{  
-background: #c0392b;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-           
-      }
-      
-         .color-blue{  
-     background: #000046;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-           
-      }
-      
-         .color-green{  
-       background: #159957;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-           
-      }
-          .color-pink{  
-        background: #D66D75;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #E29587, #D66D75);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #E29587, #D66D75); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-           
-      }
-         .color-yellow{  
-     background: #C6FFDD;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-           
-      }
-      
-          .color-orange{  
-      background: #ee0979;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-           
-      }
-         
-      
-          .color-red{  
-      background: #f85032;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-           
-      }
-   
-      
-     body{
-      text-align:center;
-      font-size: 120% 
-      line-height:1.618; 
-     }
-     
-     
-     h1,h2{
-      font-size: 3em;
-     letter-spacing: -0.05em;
-     line-height: 1.1; 
-      }
-
-      p{
-        max-width: 30em;
-        margin-bottom: 1.618em
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adam Olson's Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <a href="https://www.linkedin.com/in/adam-olson-aab562201/">Adam Olson</a>
+  </div>
+  
+  <section class="section">
+    <h2>Objective</h2>
+    <p>As a professional Product Support Associate with excellent communication skills and a growth mindset, I am seeking a position within a company that will utilize my expertise, which will allow me to be proactive in solving client problems, and ultimately make a difference to the reputation of your company.</p>
+  </section>
+  
+  <section class="section">
+    <h2>Summary of Qualifications</h2>
+    <ul>
+      <li>Trusted communicator to business and retail customers, including leading conference calls and training sessions.</li>
+      <li>Experience training employees on the job and in a class setting.</li>
+      <li>Demonstrated persistence as the lead research team associate.</li>
+      <li>Excellent troubleshooter with knowledge of different technical languages and software.</li>
+      <li>Capable multi-tasker with managing multiple client's needs.</li>
+      <li>Efficient and productive working with data entry and CMS systems.</li>
+    </ul>
+  </section>
+  
+  <section class="section">
+    <h2>Professional Experience</h2>
+    <div class="job-header">Thomson Reuters| Product Support Specialist	</div>
+    <div class="job-dates">Remote | September 2022 - Current</div>
+    <div class="job-description">
+        <ul>
+            <li>Perform technical troubleshooting of complex issues to resolution and documenting all solutions;</li>
+            <li>Address requests in priority order and track through to resolution;</li>
+            <li>Ensure a consistent response to problem resolution, customer requests and status reporting, and monitor all issues to ensure a timely resolution;</li>
+        </ul>
+    </div>
+   <div class= "job-header"> FIS-Fidelity Information Services| Product Support Specialist- Research team II </div>
+   <div class= "job-dates">Woodbury,Mn.| September 2016-April 2021 </div>
+   <div class= job-description> 
+        <ul>
+          <li> Played a key role in the development and implementation of research initiatives for special projects aimed at addressing complex client inquiries.  <li> Employed CMS systems to ensure optimal organization and effective coordination of personnel in resolving customer issues.</li>
+          <li> Conserved current clients and maintained existing client relationships</li>
+          <li> Processed wire and ACH transactions for customers in a timely and accurate manner, ensuring compliance with regulatory requirements.</li>
           
-      }
-    
-    </style>
-     
 
-    
-  </head>
-   <body> 
-      <div class = "panel" data-color = "white">
-        <div>
-          <h1>Adam Olson</h1>
-        </div>
-      </div>
-        
-      <div class = "panel" data-color = "violet">  
-            <h2>Cover Letter</h2>
-        </div>
-        
-         
-      <div class = "panel" data-color = "indigo">  
-            <h2> <a     href="https://adamolson11.github.io/">Resume</a>
-             
-   </h2>
-     </div>
-     
-     <div class = "panel" data-color = "blue">  
-            <h2>Education </h2>
-        </div>
-     
-      <div class = "panel" data-color = "green">  
-            <h2>interests</h2>
-        </div>
-    <div class = "panel" data-color = "pink">  
-            <h2>Linkedin Profile</h2>
-        </div>
-     <div class = "panel" data-color = "yellow">  
-              <h2> <a href= "https://github.com/adamolson11">  GitHub Profile</a> </h2> 
-              
-        </div>
-      <div class = "panel" data-color = "orange">  
-            <h2>Something else</h2>
-        </div>
-       <div class = "panel" data-color = "red">  
-            <h2>Also Something else</h2>
-        </div>
+     </ul>
+     <h2>
    
-     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-
-<script>
-  $(window).scroll(function() {
-    var $window = $(window),
-        $body = $('body'),
-        $panel = $('.panel');
-        
-    var scroll = $window.scrollTop() + ($window.height() / 3);
-    
-    $panel.each(function() {
-      var $this = $(this);
-      
-      if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
-        $body.removeClass(function(index, css) {
-          return (css.match(/(^|\s)color-\S+/g) || []).join('');
-        });
-        
-        $body.addClass('color-' + $(this).data('color'));
-      }
-    });
-  }).scroll();
-</script>
+      Education</h2>
+     <div class=description> Double Major in Psychology and Mass Communications at University of Wisconsin Eau Claire</div>
+  </div>
+  <button id="myButton">Home</button>
+    </
