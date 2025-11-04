@@ -1,0 +1,118 @@
+# Create follow-up feature branches & PRs for motion grammar and Phase 2
+name: Create follow-up feature branches & PRs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-followups:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Create branch feature/motion-grammar-v1
+        run: |
+          git fetch origin
+          git checkout -B feature/motion-grammar-v1
+          mkdir -p scripts/motion
+          cat > scripts/motion/README.md <<'EOF'
+Motion grammar v1: refine shared Framer Motion variants and wire them into Hero, ProjectCard, and Modal.
+Goals:
+- Ensure all motion uses scripts/motion/variants.js (no inline easings)
+- Respect prefers-reduced-motion
+- Export named variants: sectionReveal, listStagger, cardIn, cardHover, cardHoverOut, modalBackdrop, modalPanel, logoIdle
+EOF
+          git add scripts/motion/README.md
+          git commit -m "chore(motion): add README stub for motion grammar v1" || echo "no changes"
+          git push -u origin feature/motion-grammar-v1 --force
+
+      - name: Create branch feature/phase-2-sections
+        run: |
+          git checkout main
+          git pull
+          git checkout -B feature/phase-2-sections
+          mkdir -p components/sections
+          cat > components/sections/README.md <<'EOF'
+Phase 2 component stubs:
+- Timeline
+- Skills
+- MicroBio
+- Footer
+These will be implemented after motion grammar stabilizes.
+EOF
+          git add components/sections/README.md
+          git commit -m "feat(sections): add Phase 2 component stubs" || echo "no changes"
+          git push -u origin feature/phase-2-sections --force
+
+      - name: Create branch feature/projectcard-polish
+        run: |
+          git checkout main
+          git pull
+          git checkout -B feature/projectcard-polish
+          mkdir -p design
+          cat > design/placeholder-polish.md <<'EOF'
+Project card & modal polish notes:
+- Glass polish tokens, hover/focus parity, shadow/hb-card tuning
+- Accessibility checklist for keyboard focus and modal trap
+EOF
+          git add design/placeholder-polish.md
+          git commit -m "chore(polish): add visual polish placeholder" || echo "no changes"
+          git push -u origin feature/projectcard-polish --force
+
+      - name: Open PR - motion grammar
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "feat(motion): motion grammar v1"
+          commit-message: "chore(motion): add motion grammar v1 stub"
+          body: |
+            Draft PR to centralize and refine Framer Motion variants (motion grammar v1).
+            Goals:
+            - Ensure all motion imports from scripts/motion/variants.js
+            - Add reduced-motion guards
+            - Wire variants into Hero and ProjectCard
+            Acceptance:
+            - [ ] Variants present and used (no inline easing)
+            - [ ] Reduced-motion respected
+            - [ ] Motion review from Creative
+          base: main
+          head: feature/motion-grammar-v1
+          reviewers: adamolson11
+
+      - name: Open PR - phase 2
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "feat(sections): add Phase 2 component stubs"
+          commit-message: "feat(sections): add component stubs"
+          body: |
+            Draft PR: Timeline/Skills/MicroBio/Footer stubs for Phase 2.
+            These are placeholders to be implemented after motion grammar stabilizes.
+          base: main
+          head: feature/phase-2-sections
+          reviewers: adamolson11
+
+      - name: Open PR - polish
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "chore(polish): Project card visual polish placeholder"
+          commit-message: "chore(polish): add visual polish notes"
+          body: |
+            Draft PR: glass polish and accessibility polish plan for project cards & modals.
+            Creative review required before visual changes are merged.
+          base: main
+          head: feature/projectcard-polish
+          reviewers: adamolson11
