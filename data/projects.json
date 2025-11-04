@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ticketflow",
+    "title": "TicketFlow",
+    "description": "A streamlined support ticket workflow app.",
+    "status": "Live"
+  },
+  {
+    "id": "hb-market",
+    "title": "Hudson Blue Market",
+    "description": "Marketplace for curated Hudson Blue assets.",
+    "status": "In Development — Launching 2025"
+  },
+  {
+    "id": "portfolio",
+    "title": "Portfolio Site",
+    "description": "This Hudson Blue portfolio starter.",
+    "status": "Prototype"
+  }
+]
