@@ -79,9 +79,9 @@ export default function Home() {
       {/* Contact Section */}
       <section className="section">
         <div className="container text-center">
-          <h2 className="section-title">Let's Connect</h2>
+          <h2 className="section-title">Let&apos;s Connect</h2>
           <p className="contact-text">
-            Interested in working together? Reach out and let's build something great.
+            Interested in working together? Reach out and let&apos;s build something great.
           </p>
           <div className="contact-links">
             <a href="mailto:adam.olson11@gmail.com" className="contact-button">
