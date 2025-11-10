@@ -21,9 +21,9 @@ export default function Home() {
   ];
 
   const skills = [
-    "JavaScript/TypeScript", "React & Next.js", "Node.js",
+    "JavaScript/TypeScript", "React and Next.js", "Node.js",
     "Python", "MongoDB", "PostgreSQL",
-    "Git & GitHub", "REST APIs", "Tailwind CSS"
+    "Git and GitHub", "REST APIs", "Tailwind CSS"
   ];
 
   return (
